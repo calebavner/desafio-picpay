@@ -1,8 +1,6 @@
 package app.controller;
 
 import app.controller.dto.CreateWalletDto;
-import app.model.Wallet;
-import app.repository.WalletRepository;
 import app.service.WalletService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;

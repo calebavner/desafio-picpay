@@ -41,6 +41,14 @@ public class Wallet {
         this.walletType = walletType;
     }
 
+    public boolean isWalletTypeUser() {
+        return this.walletType.equals(WalletType.Enum.USER.get());
+    }
+
+    public boolean isBalanceOk(BigDecimal value) {
+        return this.balance.doubleValue() > value.doubleValue();
+    }
+
     public Long getId() {
         return id;
     }
@@ -95,5 +103,13 @@ public class Wallet {
 
     public void setWalletType(WalletType walletType) {
         this.walletType = walletType;
+    }
+
+    public void debit(BigDecimal value) {
+        this.balance = this.balance.subtract(value);
+    }
+
+    public void credit(BigDecimal value) {
+        this.balance = this.balance.add(value);
     }
 }

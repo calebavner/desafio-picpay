@@ -1,6 +1,7 @@
 package app.service;
 
 import app.client.AuthorizationClient;
+import app.controller.dto.TransferDto;
 import app.exception.PersonalException;
 import app.model.Transfer;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ public class AuthorizationService {
         this.authorizationClient = authorizationClient;
     }
 
-    public boolean isAuthorized(Transfer transfer) {
+    public boolean isAuthorized(TransferDto transfer) {
 
         var resp = authorizationClient.isAuth();
 
